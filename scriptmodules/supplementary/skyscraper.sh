@@ -193,7 +193,7 @@ function configure_skyscraper() {
     done
 
     _init_config_skyscraper
-    chown -R $user:$user "$configdir/all/skyscraper"
+    chown -R $user:$group "$configdir/all/skyscraper"
 }
 
 function _init_config_skyscraper() {
@@ -470,7 +470,7 @@ function gui_skyscraper() {
 
     iniConfig " = " '"' "$configdir/all/skyscraper.cfg"
     eval $(_load_config_skyscraper)
-    chown "$user":"$user" "$configdir/all/skyscraper.cfg"
+    chown $user:$group "$configdir/all/skyscraper.cfg"
 
     local -a s_source
     local -a s_source_names
